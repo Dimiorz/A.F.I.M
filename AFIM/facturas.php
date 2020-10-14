@@ -60,6 +60,7 @@
                 </div>
                 <!-- /.row -->
                 <hr>
+                <!-- Tabla de facturas -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h2>Bordered with Striped Rows</h2>

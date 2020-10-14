@@ -114,6 +114,8 @@
                                 <option value="">Opcion4</option>
                             </select>
                         </div>
+                        <button class="btn btn-sm btn-primary">Editar</button>
+                        <button class="btn btn-sm btn-danger">Eliminar</button>
                     </form>
 
                 </div>

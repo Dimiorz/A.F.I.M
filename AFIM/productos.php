@@ -36,7 +36,7 @@
 
     <div id="wrapper">
         <!-- Header y Sidebar -->
-    <?php include_once("views/navbar-header.php");?>
+        <?php include_once("views/navbar-header.php");?>
 
         <div id="page-wrapper">
 
@@ -46,178 +46,185 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Charts
+                            Productos
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-bar-chart-o"></i> Charts
+                                <i class="fa fa-bar-chart-o"></i> Productos
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <!-- Flot Charts -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header">Flot Charts</h2>
-                        <p class="lead">Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features. For full usage instructions and documentation for Flot Charts, visit <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.</p>
-                    </div>
-                </div>
-                <!-- /.row -->
+                <div class="col-lg-12">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-lg-10">
+                            <h2>Tabla de productos</h2>
+                        </div>
+                        <div class="col-lg-2">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-lg btn-success" data-toggle="modal"
+                                data-target="#exampleModal">
+                                Añadir producto
+                            </button>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Line Graph Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-line-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Añadir un producto</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Nombre del producto</label>
+                                                        <input class="form-control" placeholder="Sebastián">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <form action="">
+                                                        <div class="form-group">
+                                                            <label>Existencias</label>
+                                                            <input class="form-control" placeholder="302011000">
+                                                        </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <label for="fecha">Lote :</label>
 
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Pie Chart Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-pie-chart"></div>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Multiple Axes Line Graph Example with Tooltips and Raw Data</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-multiple-axes-chart"></div>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
+                                                    <input type="date" id="fecha" name="fecha" value="" min="2010-01-01"
+                                                        max="2018-12-31">
+                                                </div>
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Moving Line Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-moving-line-chart"></div>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Bar Graph with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-bar-chart"></div>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
+                                                <div class="col-lg-12">
+                                                    <label for="fecha">Fecha de vencimiento:</label>
 
-                <!-- Morris Charts -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header">Morris Charts</h2>
-                        <p class="lead">Morris.js is a very simple API for drawing line, bar, area and donut charts. For full usage instructions and documentation for Morris.js charts, visit <a href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a>.</p>
-                    </div>
-                </div>
-                <!-- /.row -->
+                                                    <input type="date" id="fecha" name="fecha" value="" min="2010-01-01"
+                                                        max="2018-12-31">
+                                                </div>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Area Line Graph Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
+                                                <div class="col-lg-12">
+                                                    <form action="">
+                                                        <div class="form-group">
+                                                            <label>Precio de compra</label>
+                                                            <input class="form-control" placeholder="99999999">
+                                                        </div>
+                                                </div>
 
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Donut Chart Example</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                                <div class="col-lg-4">
+                                                    <label for="fecha_pago">Seleccione una opción</label>
+                                                    <select name="fecha_pago" id="fecha_pago">
+                                                        <option value="">Opcion1</option>
+                                                        <option value="">Opcion2</option>
+                                                        <option value="">Opcion4</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Line Graph Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-line-chart"></div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Bar Graph Example</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Existencias</th>
+                                    <th>Lote</th>
+                                    <th>Vencimiento</th>
+                                    <th>Precio de compra</th>
+                                    <th>Acciónes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>/index.html</td>
+                                    <td>1265</td>
+                                    <td>32.3%</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                    <td><button class="btn btn-sm btn-primary">Editar</button>
+                                        <button class="btn btn-sm btn-danger">Eliminar</button></td>
+
+                                </tr>
+                                <tr>
+                                    <td>/about.html</td>
+                                    <td>261</td>
+                                    <td>33.3%</td>
+                                    <td>$234.12</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                                <tr>
+                                    <td>/sales.html</td>
+                                    <td>665</td>
+                                    <td>21.3%</td>
+                                    <td>$16.34</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                                <tr>
+                                    <td>/blog.html</td>
+                                    <td>9516</td>
+                                    <td>89.3%</td>
+                                    <td>$1644.43</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                                <tr>
+                                    <td>/404.html</td>
+                                    <td>23</td>
+                                    <td>34.3%</td>
+                                    <td>$23.52</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                                <tr>
+                                    <td>/services.html</td>
+                                    <td>421</td>
+                                    <td>60.3%</td>
+                                    <td>$724.32</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                                <tr>
+                                    <td>/blog/post.html</td>
+                                    <td>1233</td>
+                                    <td>93.2%</td>
+                                    <td>$126.34</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                                <tr>
+                                    <td>/blog/post.html</td>
+                                    <td>1233</td>
+                                    <td>93.2%</td>
+                                    <td>$126.34</td>
+                                    <td>$321.33</td>
+                                    <td>$321.33</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
