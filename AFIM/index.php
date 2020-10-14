@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php require('controllers/db.php'); ?>
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,16 @@
 
     <div id="wrapper">
         <!-- Header y Sidebar -->
-        <?php include_once("views/navbar-header.php");?>
+        <?php include_once("views/navbar-header.php"); 
+        
+        if(isset($conexion)){
+            echo "conectada";
+        }
+        else{
+            echo "no conectada";
+        }
+        ?>
+
 
         <div id="page-wrapper">
 
