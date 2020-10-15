@@ -136,7 +136,7 @@
                         </div>
                     </div>
 
-                    <!-- Table -->
+                    <!-- Tabla para mostrar productos -->
                     <?php $registros = mysqli_query($conexion, "select * from productos") or die("Error en el query".mysqli_error($conexion));
                     
                     ?>
@@ -166,10 +166,12 @@
                                     <td> <?php echo $reg['precio_compra'] ?> </td>
 
                                     <td>
-                                        <button class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#modalActualizar" id="editar">Editar</button>
+                                        <a class="btn btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#modalActualizar" id="editar"
+                                            onclick="actualizarProducto(<?php echo $reg['ID_productos']; ?>)">Editar</a>
 
-                                        <a class="btn btn-sm btn-danger">Eliminar</a>
+                                        <a class="btn btn-sm btn-danger"
+                                            onclick="confirmacion_borrar(<?php echo $reg['ID_productos']; ?>)">Eliminar</a>
                                     </td>
                                 </tr>
 
@@ -182,22 +184,28 @@
 
                         <!-- Modal Actualizar -->
 
-                        <?php
-    $id = $_REQUEST['ID_productos'];
 
-    $registros = mysqli_query($conexion, "select * from productos
-                        where ID_productos= '$id'") or
-        die("Problemas en el select:" . mysqli_error($conexion));
-    if ($reg = mysqli_fetch_array($registros)) {
+                        <?php 
+                        //  $regact = mysqli_fetch_array($registros);
 
-        $nombre = $reg['nombre'];
-        $existencias = $reg['existencias'];
-        $lote = $reg['lote'];
-        $vencimiento = $reg['vencimiento'];
-        $precio_compra = $reg['precio_compra'];
-       }
+                        //  while ($regact){
+                        //      echo "Este es el nombre".$regat['nombre'];
+                        //  }
+                        // $id = $_REQUEST['ID_productos'];
 
-    ?>
+                        // $registros = mysqli_query($conexion, "select * from productos
+                        //                     where ID_productos= '$id'") or
+                        //     die("Problemas en el select:" . mysqli_error($conexion));
+                        // if ($reg = mysqli_fetch_array($registros)) {
+
+                        //     $nombre = $reg['nombre'];
+                        //     $existencias = $reg['existencias'];
+                        //     $lote = $reg['lote'];
+                        //     $vencimiento = $reg['vencimiento'];
+                        //     $precio_compra = $reg['precio_compra'];
+                        //                                     }
+
+                                             ?>
                         <div class="modal fade" id="modalActualizar" tabindex="-1"
                             aria-labelledby="modalActualizarLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -211,12 +219,11 @@
                                     </div>
                                     <div class="modal-body">
                                         <!-- Formulario -->
-                                        <form action="controllers/guardarProducto.php" method="POST">
+                                        <form action="controllers/actualizarPrducto.php" method="POST" name="editar">
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label>Nombre del producto</label>
-                                                    <input class="form-control" name="nombreProducto"
-                                                        value="<?php echo $reg['primer_nombre'] ?>"> </div>
+                                                    <input class="form-control" name="nombreProducto" value=""> </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <form action="">
@@ -249,8 +256,9 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-dismiss="modal">Cerrar</button>
-                                                <button type="submit" class="btn btn-primary"
-                                                    name="guardarProducto">Guardar producto</button>
+                                                <a type="submit" class="btn btn-primary"
+                                                    name="guardarProducto">Actualizar
+                                                    producto</a>
                                             </div>
                                         </form>
                                     </div>
@@ -291,10 +299,35 @@
 
 
     <!-- Custom scripts -->
-    <script>
-        $('#editar').on("click", function () {
-            console.log(this);
-        });
+    <!-- Alerta borrar -->
+    <script type="text/javascript">
+        function confirmacion_borrar(ID_productos) {
+
+            if (confirm(`¿Realmente desea eliminar el producto con id ${ID_productos}?`)) {
+
+
+                setTimeout(() => {
+                    window.location.href = "controllers/borrarProducto.php?ID_productos=" + ID_productos
+                }, 1500);
+            }
+        }
+
+        function actualizarProducto(ID_productos) {
+
+            console.log(ID_productos)
+
+            // $.ajax({
+            //     type: "POST",
+            //     url: "controllers/actualizarProducto.php?ID_productos=" + ID_productos,
+            //     dataType: "json",
+            //     data: {},
+            //     success: function (data) {
+
+            //     }
+            // });
+
+            // window.location.href = "controllers/actualizarProducto.php?ID_productos" + ID_productos
+        }
     </script>
 </body>
 

@@ -21,7 +21,7 @@ if(isset($resultado)){
         <div class='alert alert-success' role='alert'>
         <h1>PRODUCTO GUARDADO!</h1>
         <h4>se ha guardado su producto</h4>
-        <p>Serás redireccionado en <span id='counter'>2</span> segundo(s).</p>
+        <p>Serás redireccionado en <span id='counter'>1</span> segundo(s).</p>
     </div>
     </div>
     <script type='text/javascript'>
