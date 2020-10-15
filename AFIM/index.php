@@ -71,25 +71,25 @@
 
                             <div class="form-group">
                                 <label>Nombre del cliente</label>
-                                <input class="form-control" name="nombre" placeholder="Sebastián">
+                                <input class="form-control" name="nombre" placeholder="Sebastián" required>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Primer apellido del cliente</label>
-                                <input class="form-control" name="apellido1" placeholder="perez">
+                                <input class="form-control" name="apellido1" placeholder="perez" required>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Segundo apellido del cliente</label>
-                                <input class="form-control" name="apellido2" placeholder="apalcio">
+                                <input class="form-control" name="apellido2" placeholder="apalcio" required>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Cedula</label>
-                                <input class="form-control" name="cedula" placeholder="302011000">
+                                <input class="form-control" name="cedula" placeholder="302011000" required>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -102,60 +102,58 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input class="form-control" name="telefono" placeholder="302011000">
+                                <input class="form-control" name="telefono" placeholder="302011000" required>
                             </div>
-                            <button class="btn btn-sm btn-primary" name="guardarCliente" id="guardarCliente">
-                                Registrar</button>
-                            <button class="btn btn-sm btn-danger">Eliminar</button>
+                            <button class="btn btn-sm btn-primary" name="guardarCliente" id="guardarCliente">Registrar</button>
+                        </div>
                     </form>
 
-                    <!-- Table -->
-
-                    <?php $registros = mysqli_query($conexion, "select * from clientes") or die("Error en el query".mysqli_error($conexion));
+                   <!-- Table -->
+                   <?php $registros = mysqli_query($conexion, "select * from clientes") or die("Error en el query".mysqli_error($conexion));
                     
                     ?>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Nombre</th>
-                                            <th>Primer Apellido</th>
-                                            <th>Segundo Apellido</th>
-                                            <th>Cedula</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                    <div class="col-lg-12">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Primer Apellido</th>
+                                    <th>Segundo Apellido</th>
+                                    <th>Cedula</th>
+                                    <th>Telefono</th>
+                                    <th>Correo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
                                 while ($reg = mysqli_fetch_array($registros)) {
                                 ?>
-                                        <tr>
-                                            <td> <?php echo $reg['ID_clientes'] ?></td>
-                                            <td> <?php echo $reg['nombre'] ?></td>
-                                            <td> <?php echo $reg['apellido1'] ?></td>
-                                            <td> <?php echo $reg['apellido2'] ?> </td>
-                                            <td> <?php echo $reg['cedula'] ?> </td>
-                                            <td> <?php echo $reg['correo'] ?> </td>
-                                            <td> <?php echo $reg['telefono'] ?> </td>
+                                <tr>
+                                    <td> <?php echo $reg['ID_clientes'] ?></td>
+                                    <td> <?php echo $reg['nombre'] ?></td>
+                                    <td> <?php echo $reg['apellido1'] ?></td>
+                                    <td> <?php echo $reg['apellido2'] ?> </td>
+                                    <td> <?php echo $reg['cedula'] ?> </td>
+                                    <td> <?php echo $reg['telefono'] ?> </td>
+                                    <td> <?php echo $reg['correo'] ?> </td>
 
-                                            <td>
-                                                <button class="btn btn-sm btn-primary" data-toggle="modal"
-                                                    data-target="#modalActualizar" id="editar">Editar</button>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#modalActualizar" id="editar">Editar</button>
 
-                                                <a class="btn btn-sm btn-danger">Eliminar</a>
-                                            </td>
-                                        </tr>
+                                        <a class="btn btn-sm btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
 
-                                        <?php
-                                        }
-                                        mysqli_close($conexion);
-                                        ?>
-                                    </tbody>
-                                </table>
+                                <?php
+                                }
+                                mysqli_close($conexion);
+            ?>
+                            </tbody>
+                        </table>
+
 
                                 <!-- /.row -->
                             </div>
