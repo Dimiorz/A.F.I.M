@@ -1,13 +1,5 @@
 !-- Button trigger modal -->
 
-<?php
-
-$serial = $_REQUEST['ID_clientes'];
-$consulta = "SELECT * FROM clientes where id=$serial";
-$clientes = mysqli_query($conexion, $consulta);
-
-?>
-
 <!-- Modal -->
 <div class="modal fade" id="editarCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
