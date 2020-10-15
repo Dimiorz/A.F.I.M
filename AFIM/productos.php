@@ -73,7 +73,7 @@
                                 Añadir producto
                             </button>
 
-                            <!-- Modal -->
+                            <!-- Modal Crear-->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog">
@@ -95,30 +95,30 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <form action="">
-                                                        <div class="form-group" name="existenciaProducto" >
+                                                        <div class="form-group">
                                                             <label>Existencias</label>
-                                                            <input class="form-control" placeholder="302011000">
+                                                            <input class="form-control" placeholder="302011000"
+                                                                name="existenciaProducto">
                                                         </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <label for="fecha">Lote :</label>
-
-                                                    <input type="date" id="fecha" name="fecha" value="" min="2010-01-01"
-                                                        max="2018-12-31" name="loteProducto" >
+                                                    <input type="date" placeholder="YYYY/MM/DD" name="loteProducto">
                                                 </div>
 
                                                 <div class="col-lg-12">
                                                     <label for="fecha">Fecha de vencimiento:</label>
 
-                                                    <input type="date" id="fecha" name="fecha" value="" min="2010-01-01"
-                                                        max="2018-12-31" name="fechaVencimiento" >
+                                                    <input type="date" value="" name="fechaVencimiento"
+                                                        placeholder="YYYY/MM/DD">
                                                 </div>
 
                                                 <div class="col-lg-12">
                                                     <form action="">
                                                         <div class="form-group">
                                                             <label>Precio de compra</label>
-                                                            <input class="form-control" placeholder="99999999" name="precioCompra" >
+                                                            <input class="form-control" placeholder="99999999"
+                                                                name="precioCompra">
                                                         </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -135,6 +135,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Table -->
+                    <?php $registros = mysqli_query($conexion, "select * from productos") or die("Error en el query".mysqli_error($conexion));
+                    
+                    ?>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
@@ -149,75 +154,110 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                while ($reg = mysqli_fetch_array($registros)) {
+                                ?>
                                 <tr>
-                                    <td>/index.html</td>
-                                    <td>1265</td>
-                                    <td>32.3%</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                    <td><button class="btn btn-sm btn-primary">Editar</button>
-                                        <button class="btn btn-sm btn-danger">Eliminar</button></td>
+                                    <td> <?php echo $reg['ID_productos'] ?></td>
+                                    <td> <?php echo $reg['nombre'] ?></td>
+                                    <td> <?php echo $reg['existencias'] ?></td>
+                                    <td> <?php echo $reg['lote'] ?> </td>
+                                    <td> <?php echo $reg['vencimiento'] ?> </td>
+                                    <td> <?php echo $reg['precio_compra'] ?> </td>
 
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#modalActualizar" id="editar">Editar</button>
+
+                                        <a class="btn btn-sm btn-danger">Eliminar</a>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>/about.html</td>
-                                    <td>261</td>
-                                    <td>33.3%</td>
-                                    <td>$234.12</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
-                                <tr>
-                                    <td>/sales.html</td>
-                                    <td>665</td>
-                                    <td>21.3%</td>
-                                    <td>$16.34</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
-                                <tr>
-                                    <td>/blog.html</td>
-                                    <td>9516</td>
-                                    <td>89.3%</td>
-                                    <td>$1644.43</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
-                                <tr>
-                                    <td>/404.html</td>
-                                    <td>23</td>
-                                    <td>34.3%</td>
-                                    <td>$23.52</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
-                                <tr>
-                                    <td>/services.html</td>
-                                    <td>421</td>
-                                    <td>60.3%</td>
-                                    <td>$724.32</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
-                                <tr>
-                                    <td>/blog/post.html</td>
-                                    <td>1233</td>
-                                    <td>93.2%</td>
-                                    <td>$126.34</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
-                                <tr>
-                                    <td>/blog/post.html</td>
-                                    <td>1233</td>
-                                    <td>93.2%</td>
-                                    <td>$126.34</td>
-                                    <td>$321.33</td>
-                                    <td>$321.33</td>
-                                </tr>
+
+                                <?php
+                                }
+                                mysqli_close($conexion);
+            ?>
                             </tbody>
                         </table>
+
+                        <!-- Modal Actualizar -->
+
+                        <?php
+    $id = $_REQUEST['ID_productos'];
+
+    $registros = mysqli_query($conexion, "select * from productos
+                        where ID_productos= '$id'") or
+        die("Problemas en el select:" . mysqli_error($conexion));
+    if ($reg = mysqli_fetch_array($registros)) {
+
+        $nombre = $reg['nombre'];
+        $existencias = $reg['existencias'];
+        $lote = $reg['lote'];
+        $vencimiento = $reg['vencimiento'];
+        $precio_compra = $reg['precio_compra'];
+       }
+
+    ?>
+                        <div class="modal fade" id="modalActualizar" tabindex="-1"
+                            aria-labelledby="modalActualizarLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalActualizar">Actualziar producto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Formulario -->
+                                        <form action="controllers/guardarProducto.php" method="POST">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label>Nombre del producto</label>
+                                                    <input class="form-control" name="nombreProducto"
+                                                        value="<?php echo $reg['primer_nombre'] ?>"> </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <form action="">
+                                                    <div class="form-group">
+                                                        <label>Existencias</label>
+                                                        <input class="form-control" placeholder="302011000"
+                                                            name="existenciaProducto">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label for="fecha">Lote :</label>
+                                                <input type="date" placeholder="YYYY/MM/DD" name="loteProducto">
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <label for="fecha">Fecha de vencimiento:</label>
+
+                                                <input type="date" value="" name="fechaVencimiento"
+                                                    placeholder="YYYY/MM/DD">
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <form action="">
+                                                    <div class="form-group">
+                                                        <label>Precio de compra</label>
+                                                        <input class="form-control" placeholder="99999999"
+                                                            name="precioCompra">
+                                                    </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Cerrar</button>
+                                                <button type="submit" class="btn btn-primary"
+                                                    name="guardarProducto">Guardar producto</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -249,6 +289,13 @@
     <script src="js/plugins/flot/jquery.flot.pie.js"></script>
     <script src="js/plugins/flot/flot-data.js"></script>
 
+
+    <!-- Custom scripts -->
+    <script>
+        $('#editar').on("click", function () {
+            console.log(this);
+        });
+    </script>
 </body>
 
 </html>
