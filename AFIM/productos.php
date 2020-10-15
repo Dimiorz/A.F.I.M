@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php require('controllers/db.php'); ?>
 
 <head>
 
@@ -84,16 +85,17 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="">
+                                            <!-- Formulario -->
+                                            <form action="controllers/guardarProducto.php" method="POST">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label>Nombre del producto</label>
-                                                        <input class="form-control" placeholder="Sebastián">
+                                                        <input class="form-control" name="nombreProducto">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <form action="">
-                                                        <div class="form-group">
+                                                        <div class="form-group" name="existenciaProducto" >
                                                             <label>Existencias</label>
                                                             <input class="form-control" placeholder="302011000">
                                                         </div>
@@ -102,39 +104,32 @@
                                                     <label for="fecha">Lote :</label>
 
                                                     <input type="date" id="fecha" name="fecha" value="" min="2010-01-01"
-                                                        max="2018-12-31">
+                                                        max="2018-12-31" name="loteProducto" >
                                                 </div>
 
                                                 <div class="col-lg-12">
                                                     <label for="fecha">Fecha de vencimiento:</label>
 
                                                     <input type="date" id="fecha" name="fecha" value="" min="2010-01-01"
-                                                        max="2018-12-31">
+                                                        max="2018-12-31" name="fechaVencimiento" >
                                                 </div>
 
                                                 <div class="col-lg-12">
                                                     <form action="">
                                                         <div class="form-group">
                                                             <label>Precio de compra</label>
-                                                            <input class="form-control" placeholder="99999999">
+                                                            <input class="form-control" placeholder="99999999" name="precioCompra" >
                                                         </div>
                                                 </div>
-
-                                                <div class="col-lg-4">
-                                                    <label for="fecha_pago">Seleccione una opción</label>
-                                                    <select name="fecha_pago" id="fecha_pago">
-                                                        <option value="">Opcion1</option>
-                                                        <option value="">Opcion2</option>
-                                                        <option value="">Opcion4</option>
-                                                    </select>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Cerrar</button>
+                                                    <button type="submit" class="btn btn-primary"
+                                                        name="guardarProducto">Guardar producto</button>
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
