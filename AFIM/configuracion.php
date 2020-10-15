@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Configuración </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,282 +44,46 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Bootstrap Grid
+                            Configuración
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-wrench"></i> Bootstrap Grid
+                                <i class="fa fa-wrench"></i> Configuración
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-12
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
+                <h2 class="page-header">
+                    Mis datos
+                </h2>
                 <div class="row">
                     <div class="col-lg-6 text-center">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                .col-lg-6
+                                <p>Nombre: Jhon Smith</p>
+                                <p>Correo: SmithJ129@correo.com </p>
+                                <p>Cargo: Vendedor </p>
+                                <p>Empresa: EmpresaX </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                .col-lg-6
+                                <button class="btn btn-light md col-lg-12" style="margin-bottom: 3rem;">Cambiar mi
+                                    contraseña</button>
+                                <br>
+                                <button class="btn btn-info md col-lg-12">Actualizar mis datos</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
 
-                <div class="row">
-                    <div class="col-lg-4 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-4
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-4
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-4
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
 
-                <div class="row">
-                    <div class="col-lg-3 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-3
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-2 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-2
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-1
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-8 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-8
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-4
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-3 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-6
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                .col-lg-3
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
