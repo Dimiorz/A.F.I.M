@@ -23,7 +23,7 @@ $resultado= mysqli_query($conexion,$query);
 if($resultado){
     header("location: ../index.php");
 }else{
-    echo("no sirver");
+    echo("no sirve");
     }
 
 ?>

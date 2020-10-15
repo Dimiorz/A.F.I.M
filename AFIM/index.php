@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require('controllers/db.php'); ?>
+<?php require('controllers/db.php'); 
+require("modal/editarCliente.php");?>
+
 
 <head>
     <meta charset="utf-8">
@@ -141,7 +143,7 @@
 
                                     <td>
                                         <button class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#modalActualizar" id="editar">Editar</button>
+                                            data-target="#editarCliente" id="editar">Editar</button>
 
                                         <a class="btn btn-sm btn-danger">Eliminar</a>
                                     </td>
